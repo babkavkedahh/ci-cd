@@ -1,27 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
 using LabaInformationTechologics.Bd;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Diagnostics;
-using Microsoft.Extensions.Options;
 using LabaInformationTechologics.Mappers;
 using LabaInformationTechologics.Controllers;
 namespace LabaInformationTechologics.Configurations
 {
     public class Configuration
     {
-        private const String Host = "localhost";
+        private const String Host = "(localdb)\\MSSQLLocalDB";
         private const String DataBase = "DataUser";
         private const String Port = "8070";
-        private const String User = "root";
+        private const String User = "user";
         private const String Password = "12345";
         private BD ConfigureBd()
         {
             var options = new DbContextOptionsBuilder<BD>()
-                .UseMySql($"server={Host};user={User};password={Password};database={DataBase}", ServerVersion.AutoDetect($"server={Host};user={User};password={Password};database={DataBase}"));
+                .UseSqlServer($"Server={Host};Database={DataBase};Trusted_Connection=True;");
             return new BD(options.Options);
         }
         public Mapper<Tsource, TDestination> configureMapper<Tsource, TDestination>()

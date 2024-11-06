@@ -1,16 +1,9 @@
-# Use root/example as user/password credentials
-version: '3.9'
 
 services:
-
-  db:
-    container_name: MariaDb
-    image: mariadb:latest   
-    restart: always
-    environment:
-      SERVER: localhost
-      USER: root
-      MARIADB_ROOT_PASSWORD: 12345  
-      DATABASE: DataUser
-    ports: 
-    - "3306:3306"  
+    web:
+        build:
+          context: .
+          dockerfile: Dockerfile
+        platform: windows/servercore:ltsc2022
+        ports:
+          - "5000:80"  

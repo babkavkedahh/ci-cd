@@ -1,7 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using LabaInformationTechologics.EntityModel;
-using System.Threading.Tasks;
-using System;
 namespace LabaInformationTechologics.Bd
 {
     public class BD : DbContext
