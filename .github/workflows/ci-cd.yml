@@ -32,3 +32,8 @@ jobs:
 
       - name: Publish Application
         run: dotnet publish -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true  # Публикуем проект для Windows
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: MyApp-Release
+          path: bin/Release/net9.0/win-x64/publish  # Путь к папке с опубликованным приложением
