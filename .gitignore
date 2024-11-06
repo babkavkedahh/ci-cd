@@ -1,4 +1,4 @@
-﻿# Игнорируем файлы Visual Studio
+﻿﻿# Игнорируем файлы Visual Studio
 .vs/
 .vscode/
 *.user
