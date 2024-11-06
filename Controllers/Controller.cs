@@ -20,7 +20,7 @@ namespace LabaInformationTechologics.Controllers
         }
         public void Add(EntityModelUser user)
         {
-
+            user.Id = 0;
             _Bd.User.Add(user);
           
             _Bd.SaveChanges();

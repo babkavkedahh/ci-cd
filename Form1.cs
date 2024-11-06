@@ -180,7 +180,7 @@ namespace LabaInformationTechologics
                     else
                     {
                         
-                        BuisnesModelUser buisnesUser = new BuisnesModelUser(0, FIO, Number, DateBirth, DateStart);
+                        BuisnesModelUser buisnesUser = new BuisnesModelUser(ListUsers.Count + 1, FIO, Number, DateBirth, DateStart);
                         EntityModelUser user = _Mapper.Map(buisnesUser);
 
                         ListUsers.Add(buisnesUser);
@@ -195,7 +195,7 @@ namespace LabaInformationTechologics
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.InnerException.Message);
+                MessageBox.Show(ex.InnerException.);
             }
         }
 
