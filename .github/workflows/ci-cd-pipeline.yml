@@ -1,49 +1,34 @@
-﻿name: CI/CD Pipeline
+﻿name: Build Windows Forms Application
 
 on:
   push:
     branches:
-      - master  # или другая ветка, которую вы используете
+      - main  # Запускать на push в основную ветку
   pull_request:
     branches:
-      - master
+      - main  # Запускать на pull request в основную ветку
 
 jobs:
   build:
-    runs-on: windows-latest  # Используй Windows, так как это Windows Forms
+    runs-on: windows-latest  # Используем Windows-агент для сборки
 
     steps:
-    - name: Проверка из репозитория
-      uses: actions/checkout@v2
-      
-    - name: Установка .NET
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: '6.0.x'  # Убедитесь, что версия соответствует вашей
+      - name: Checkout repository
+        uses: actions/checkout@v3  # Клонируем репозиторий
 
-    - name: Восстановление зависимостей
-      run: dotnet restore
+      - name: Set up .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '9.0'  # Указываем версию .NET, с которой будет собираться проект (возможно, тебе нужно будет изменить на 7.0 или другую версию, в зависимости от того, что используется в твоем проекте)
 
-    - name: Сборка проекта
-      run: dotnet build --configuration Release
+      - name: Restore dependencies
+        run: dotnet restore  # Восстанавливаем зависимости проекта
 
-    - name: Запуск тестов
-      run: dotnet test --configuration Release
+      - name: Build project
+        run: dotnet build --configuration Release  # Сборка проекта в режиме Release
 
-    - name: Публикация приложения
-      run: dotnet publish -c Release -o ./output
+      - name: Run tests (optional)
+        run: dotnet test  # Запуск тестов, если они есть в проекте
 
-  deploy:
-    runs-on: windows-latest
-    needs: build
-    steps:
-    - name: Проверка из репозитория
-      uses: actions/checkout@v2
-
-    - name: Копирование в сервер
-      run: git clone "https://github.com/Onederdeken/ci-cd"
-        # Например, использование WinSCP или PowerShell для копирования файлов на сервер.
-        # Убедитесь, что у вас есть настройки для доступа к вашему серверу развертывания.
-
-    - name: Развертывание приложения
-      run: dotnet run
+      - name: Publish Application
+        run: dotnet publish -c Release -r win-x64 --self-contained true -p:PublishSingleFile=true  # Публикуем проект для Windows
