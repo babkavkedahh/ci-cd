@@ -132,3 +132,10 @@ C:\Users\Karpacho Kapitovsky\source\repos\LabaInformationTechnologicsNew\bin\Deb
 C:\Users\Karpacho Kapitovsky\source\repos\LabaInformationTechnologicsNew\bin\Debug\net8.0-windows\runtimes\win-x64\native\WebView2Loader.dll
 C:\Users\Karpacho Kapitovsky\source\repos\LabaInformationTechnologicsNew\bin\Debug\net8.0-windows\runtimes\win-x86\native\WebView2Loader.dll
 C:\Users\Karpacho Kapitovsky\source\repos\LabaInformationTechnologicsNew\bin\Debug\net8.0-windows\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+C:\Users\Karpacho Kapitovsky\source\repos\LabaInformationTechnologicsNew\bin\Debug\net8.0-windows\Microsoft.Extensions.Configuration.dll
+C:\Users\Karpacho Kapitovsky\source\repos\LabaInformationTechnologicsNew\bin\Debug\net8.0-windows\Microsoft.Extensions.Configuration.FileExtensions.dll
+C:\Users\Karpacho Kapitovsky\source\repos\LabaInformationTechnologicsNew\bin\Debug\net8.0-windows\Microsoft.Extensions.Configuration.Json.dll
+C:\Users\Karpacho Kapitovsky\source\repos\LabaInformationTechnologicsNew\bin\Debug\net8.0-windows\Microsoft.Extensions.Configuration.UserSecrets.dll
+C:\Users\Karpacho Kapitovsky\source\repos\LabaInformationTechnologicsNew\bin\Debug\net8.0-windows\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Users\Karpacho Kapitovsky\source\repos\LabaInformationTechnologicsNew\bin\Debug\net8.0-windows\Microsoft.Extensions.FileProviders.Physical.dll
+C:\Users\Karpacho Kapitovsky\source\repos\LabaInformationTechnologicsNew\bin\Debug\net8.0-windows\Microsoft.Extensions.FileSystemGlobbing.dll

@@ -1,5 +1,6 @@
 ﻿
 using LabaInformationTechologics.Bd;
+using LabaInformationTechologics.EntityModel;
 
 namespace LabaInformationTechologics.Controllers
 {
@@ -17,10 +18,13 @@ namespace LabaInformationTechologics.Controllers
             List<EntityModel.EntityModelUser> users = _Bd.User.ToList();
             return users;
         }
-        public void Add(EntityModel.EntityModelUser user)
+        public void Add(EntityModelUser user)
         {
+
             _Bd.User.Add(user);
+          
             _Bd.SaveChanges();
+           
         }
         public void Delete(int id)
         {

@@ -3,6 +3,7 @@ using LabaInformationTechologics.Bd;
 using Microsoft.EntityFrameworkCore;
 using LabaInformationTechologics.Mappers;
 using LabaInformationTechologics.Controllers;
+using System.Data;
 namespace LabaInformationTechologics.Configurations
 {
     public class Configuration
@@ -14,8 +15,9 @@ namespace LabaInformationTechologics.Configurations
         private const String Password = "12345";
         private BD ConfigureBd()
         {
+            
             var options = new DbContextOptionsBuilder<BD>()
-                .UseSqlServer($"Server={Host};Database={DataBase};Trusted_Connection=True;");
+                .UseSqlServer($"Server={Host};Database=example;Trusted_Connection=True;");
             return new BD(options.Options);
         }
         public Mapper<Tsource, TDestination> configureMapper<Tsource, TDestination>()

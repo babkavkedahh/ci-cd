@@ -12,6 +12,7 @@ using LabaInformationTechologics.Bd;
 using LabaInformationTechologics.Configurations;
 using LabaInformationTechologics.Controllers;
 using LabaInformationTechologics.BuisnesModels;
+using LabaInformationTechologics.EntityModel;
 namespace LabaInformationTechologics
 {
     public partial class Form1 : Form
@@ -137,7 +138,7 @@ namespace LabaInformationTechologics
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Source);
             }
         }
 
@@ -178,9 +179,12 @@ namespace LabaInformationTechologics
                     }
                     else
                     {
-                        BuisnesModelUser buisnesUser = new BuisnesModelUser(ListUsers.Count + 1, FIO, Number, DateBirth, DateStart);
-                        EntityModel.EntityModelUser user = _Mapper.Map(buisnesUser);
+                        
+                        BuisnesModelUser buisnesUser = new BuisnesModelUser(0, FIO, Number, DateBirth, DateStart);
+                        EntityModelUser user = _Mapper.Map(buisnesUser);
+
                         ListUsers.Add(buisnesUser);
+                        
                         _ControllerUser.Add(user);
                     }
                 }
@@ -191,7 +195,7 @@ namespace LabaInformationTechologics
             }
             catch (Exception ex)
             {
-                
+                MessageBox.Show(ex.InnerException.Message);
             }
         }
 

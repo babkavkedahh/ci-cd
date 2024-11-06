@@ -11,19 +11,20 @@ namespace LabaInformationTechologics.EntityModel
     [Table("Users")]
     public class EntityModelUser
     {
-        [Column("Id")]
-        [Required]
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+
         public int Id { get; set; }
-        [Column("ФИО")]
+       
         [Required]
         public String FIO { get; set; }
-        [Column("Номер зачетной книжки")]
+       
         [Required]
         public String Number { get;set; }
-        [Column("Дата рождения")]
+    
         [Required]
         public DateTime DateBirthDay { get; set; }
-        [Column("Дата Поступления")]
+  
         [Required]
         public DateTime DateStart { get; set; }
         
