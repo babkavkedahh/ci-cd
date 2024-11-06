@@ -195,7 +195,7 @@ namespace LabaInformationTechologics
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.InnerException.);
+                MessageBox.Show(ex.InnerException.Message);
             }
         }
 
